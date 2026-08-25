@@ -1,14 +1,13 @@
 <?php
 
+use App\Http\Controllers\JobsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/jobs', function () {
-    return view('jobs');
-})->name('jobs');
+Route::get('/jobs', [JobsController::class, 'index'])->name('jobs');
 
 Route::get('/job-details', function () {
     return view('job-details');
