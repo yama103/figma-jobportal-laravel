@@ -1,4 +1,6 @@
-  @include('components.header')
+  @extends('layouts.app')
+
+  @section('content')
   
   <main>
       <section class="page-hero">
@@ -171,4 +173,4 @@
       </section>
     </main>
 
-    @include('components.footer')
+    @endsection

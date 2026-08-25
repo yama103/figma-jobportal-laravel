@@ -1,4 +1,6 @@
-@include('components.header')
+@extends('layouts.app')
+
+@section('content')
 
 <main>
       <section class="hero">
@@ -783,4 +785,4 @@
       </section>
     </main>
 
-    @include('components.footer')
+    @endsection
