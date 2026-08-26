@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JobsController;
+use App\Http\Controllers\JobDetailsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,9 +10,8 @@ Route::get('/', function () {
 
 Route::get('/jobs', [JobsController::class, 'index'])->name('jobs');
 
-Route::get('/job-details', function () {
-    return view('job-details');
-})->name('job-details');
+Route::get('/job-details/{id}', [JobDetailsController::class, 'show'])
+    ->name('job-details');
 
 Route::get('/about-us', function () {
     return view('about-us');

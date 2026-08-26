@@ -313,7 +313,8 @@
                                              </ul>
 
                                              <div class="job-card__details">
-                                                 <a class="button" href="{{ route('job-details') }}">Job Details</a>
+                                                 <a class="button" href="{{ route('job-details', $job['id']) }}">Job
+                                                     Details</a>
                                              </div>
                                          </div>
                                      </article>
