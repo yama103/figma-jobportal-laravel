@@ -19,14 +19,15 @@
                              Filters
                              <img src="images/job-filter.svg" alt="" />
                          </button>
-                         <div class="job-filter">
+                         <form class="job-filter" method="GET" action="{{ route('jobs') }}">
                              <!-- 検索 -->
 
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Search by Job Title</h3>
                                  <div class="job-filter__search">
                                      <img src="images/search-gray.svg" alt="" />
-                                     <input type="text" placeholder="Job title or company" class="job-filter__input" />
+                                     <input type="text" placeholder="Job title or company" class="job-filter__input"
+                                         name="keyword" value="{{ request('keyword') }}" />
                                  </div>
                              </div>
 
@@ -35,8 +36,18 @@
                                  <h3 class="job-filter__title">Location</h3>
                                  <div class="job-filter__select-wrapper">
                                      <img src="images/location-gray.svg" alt="" class="job-filter__icon" />
-                                     <select class="job-filter__select">
+                                     <select name="location" class="job-filter__select">
                                          <option value="">Choose city</option>
+                                         <option value="New-York, USA" @if (request('location') === 'New-York, USA') selected @endif>
+                                             New-York, USA</option>
+                                         <option value="Los-Angeles, USA" @if (request('location') === 'Los-Angeles, USA') selected @endif>
+                                             Los-Angeles, USA</option>
+                                         <option value="Texas, USA" @if (request('location') === 'Texas, USA') selected @endif>Texas,
+                                             USA</option>
+                                         <option value="Florida, USA" @if (request('location') === 'Florida, USA') selected @endif>
+                                             Florida, USA</option>
+                                         <option value="Boston, USA" @if (request('location') === 'Boston, USA') selected @endif>
+                                             Boston, USA</option>
                                      </select>
                                  </div>
                              </div>
@@ -47,36 +58,41 @@
                                  <ul class="job-filter__list">
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="commerce" />
-                                             <span class="job-filter__text">Commerce</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="telecommunications" />
-                                             <span class="job-filter__text">Telecommunications</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="hotels-tourism" />
+                                             <input type="checkbox" name="category" value="Hotels & Tourism"
+                                                 @if (request('category') === 'Hotels & Tourism') checked @endif />
                                              <span class="job-filter__text">Hotels & Tourism</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="education" />
-                                             <span class="job-filter__text">Education</span>
+                                             <input type="checkbox" name="category" value="Media"
+                                                 @if (request('category') === 'Media') checked @endif />
+                                             <span class="job-filter__text">Media</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="financial-services" />
-                                             <span class="job-filter__text">Financial Services</span>
+                                             <input type="checkbox" name="category" value="Construction"
+                                                 @if (request('category') === 'Construction') checked @endif />
+                                             <span class="job-filter__text">Construction</span>
+                                             <span class="job-filter__count">10</span>
+                                         </label>
+                                     </li>
+                                     <li class="job-filter__item">
+                                         <label class="job-filter__label">
+                                             <input type="checkbox" name="category" value="Commerce"
+                                                 @if (request('category') === 'Commerce') checked @endif />
+                                             <span class="job-filter__text">Commerce</span>
+                                             <span class="job-filter__count">10</span>
+                                         </label>
+                                     </li>
+                                     <li class="job-filter__item">
+                                         <label class="job-filter__label">
+                                             <input type="checkbox" name="category" value="Financial services"
+                                                 @if (request('category') === 'Financial services') checked @endif />
+                                             <span class="job-filter__text">Financial services</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
@@ -91,35 +107,37 @@
                                  <ul class="job-filter__list">
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="job-type" value="full-time" />
+                                             <input type="checkbox" name="job_type" value="Full time"
+                                                 @if (request('job_type') === 'Full time') checked @endif />
                                              <span class="job-filter__text">Full Time</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="job-type" value="part-time" />
+                                             <input type="checkbox" name="job_type" value="Part time"
+                                                 @if (request('job_type') === 'Part time') checked @endif />
                                              <span class="job-filter__text">Part Time</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="job-type" value="freelance" />
+                                             <input type="checkbox" name="job_type" value="Freelance" />
                                              <span class="job-filter__text">Freelance</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="job-type" value="seasonal" />
+                                             <input type="checkbox" name="job_type" value="Seasonal" />
                                              <span class="job-filter__text">Seasonal</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
                                      </li>
                                      <li class="job-filter__item">
                                          <label class="job-filter__label">
-                                             <input type="checkbox" name="job-type" value="fixed-price" />
+                                             <input type="checkbox" name="job_type" value="Fixed-Price" />
                                              <span class="job-filter__text">Fixed-Price</span>
                                              <span class="job-filter__count">10</span>
                                          </label>
@@ -205,11 +223,11 @@
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Salary</h3>
                                  <div class="job-filter__range-wrapper">
-                                     <input type="range" min="0" max="9999" value="9999"
-                                         class="job-filter__range" />
+                                     <input type="range" min="0" max="50000"
+                                         value="{{ request('salary', 0) }}" name="salary" class="job-filter__range" />
                                  </div>
                                  <div class="job-filter__salary-info">
-                                     <span class="job-filter__salary-text">Salary: $0 - $9999</span>
+                                     <span class="job-filter__salary-text">Salary: $0 - $50000</span>
                                      <button type="button" class="job-filter__apply">
                                          Apply
                                      </button>
@@ -242,7 +260,10 @@
                                      </li>
                                  </ul>
                              </div>
-                         </div>
+                             <button type="submit" class="button">
+                                 Apply Filters
+                             </button>
+                         </form>
 
                          <div class="jobs__banner">
                              <img src="images/hiring-banner.webp" alt="" class="jobs__banner-img" />
@@ -401,4 +422,14 @@
              </div>
          </section>
      </main>
+     <script>
+         const slider = document.querySelector('.job-filter__range');
+         const salaryText = document.querySelector('.job-filter__salary-text');
+
+         salaryText.textContent = `Minimum Salary: ${Number(slider.value).toLocaleString()}`;
+
+         slider.addEventListener('input', function() {
+             salaryText.textContent = `Minimum Salary: ${Number(slider.value).toLocaleString()}`;
+         });
+     </script>
  @endsection
