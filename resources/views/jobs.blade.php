@@ -306,9 +306,9 @@
                                          <div class="job-card__main">
                                              <img src="images/jobs-1.svg" alt="" />
                                              <div class="job-card__contents">
-                                                 <p class="job-card__title">{{ $job['title'] }}</p>
+                                                 <p class="job-card__title">{{ $job->title }}</p>
                                                  <p class="job-card__subtitle">
-                                                     {{ $job['company'] }}
+                                                     {{ $job->company }}
                                                  </p>
                                              </div>
                                          </div>
@@ -317,19 +317,19 @@
                                              <ul class="job-card__meta">
                                                  <li class="job-card__meta-item">
                                                      <img src="images/bag.svg" alt="" />
-                                                     <span>{{ $job['category'] }}</span>
+                                                     <span>{{ $job->category }}</span>
                                                  </li>
                                                  <li class="job-card__meta-item">
                                                      <img src="images/clock-job-card.svg" alt="" />
-                                                     <span>{{ $job['type'] }}</span>
+                                                     <span>{{ $job->type }}</span>
                                                  </li>
                                                  <li class="job-card__meta-item">
                                                      <img src="images/wallet.svg" alt="" />
-                                                     <span>{{ $job['salary'] }}</span>
+                                                     <span>{{ $job->salary }}</span>
                                                  </li>
                                                  <li class="job-card__meta-item">
                                                      <img src="images/location.svg" alt="" />
-                                                     <span>{{ $job['location'] }}</span>
+                                                     <span>{{ $job->location }}</span>
                                                  </li>
                                              </ul>
 
@@ -345,8 +345,12 @@
                              <nav class="jobs__pagination" aria-label="Jobs pagination">
                                  <ul class="jobs__pagination-list">
                                      <li class="jobs__pagination-pages">
-                                         <a href="#" class="jobs__pagination-link is-active">1</a>
-                                         <a href="#" class="jobs__pagination-link">2</a>
+                                         @for ($page = 1; $page <= $jobs->lastPage(); $page++)
+                                             <a href="{{ $jobs->url($page) }}"
+                                                 class="jobs__pagination-link {{ $jobs->currentPage() === $page ? 'is-active' : '' }}">
+                                                 {{ $page }}
+                                             </a>
+                                         @endfor
                                      </li>
 
                                      <li class="jobs__pagination-next-item">

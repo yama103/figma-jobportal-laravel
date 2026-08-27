@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\JobData;
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -13,49 +13,49 @@ class JobsController extends Controller
         $title = 'Available Jobs';
         $description = 'Find your next career opportunity.';
 
-        $jobs = collect(JobData::all());
+        $query = Job::query();
 
         $category = $request->input('category');
+
         if ($category) {
-            $jobs = $jobs->filter(function ($job) use ($category) {
-                return $job['category'] === $category;
-            });
+            $query->where('category', $category);
         }
 
         $job_type = $request->input('job_type');
+
         if ($job_type) {
-            $jobs = $jobs->filter(function ($job) use ($job_type) {
-                return $job['type'] === $job_type;
-            });
+            $query->where('type', $job_type);
         }
 
         $keyword = $request->input('keyword');
+
         if ($keyword) {
-            $jobs = $jobs->filter(function ($job) use ($keyword) {
-                return str_contains($job['title'], $keyword)
-                    || str_contains($job['company'], $keyword);
+            $query->where(function ($query) use ($keyword) {
+                $query->where('title', 'like', "%{$keyword}%")
+                    ->orWhere('company', 'like', "%{$keyword}%");
             });
         }
 
         $location = $request->input('location');
+
         if ($location) {
-            $jobs = $jobs->filter(function ($job) use ($location) {
-                return $job['location'] === $location;
-            });
+            $query->where('location', $location);
         }
 
-        $salary = $request->input('salary');
+        // $salary = $request->input('salary');
 
-        if ($salary) {
-            $jobs = $jobs->filter(
-                function ($job) use ($salary) {
-                    $salaryRange = explode('-', $job['salary']);
-                    $salaryValue = str_replace('$', '', $salaryRange[0]);
-                    $salaryValue = (int) $salaryValue;
-                    return $salaryValue >= $salary;
-                }
-            );
-        }
+        // if ($salary) {
+        //     $jobs = $jobs->filter(
+        //         function ($job) use ($salary) {
+        //             $salaryRange = explode('-', $job['salary']);
+        //             $salaryValue = str_replace('$', '', $salaryRange[0]);
+        //             $salaryValue = (int) $salaryValue;
+        //             return $salaryValue >= $salary;
+        //         }
+        //     );
+        // }
+
+        $jobs = $query->paginate(10);
 
         return view('jobs', [
             'title' => $title,

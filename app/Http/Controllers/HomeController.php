@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Data\JobData;
+use App\Models\Job;
 
 class HomeController extends Controller
 {
   public function home()
   {
-    $jobs = collect(JobData::all());
+    $jobs = Job::latest()->take(6)->get();
 
-    $categories = $jobs->groupBy('category')->map(function ($jobs) {
-      return $jobs->count();
-    });
+    $categories = Job::all()
+      ->groupBy('category')
+      ->map(function ($jobs) {
+        return $jobs->count();
+      });
 
     return view('home', [
       'jobs' => $jobs,
