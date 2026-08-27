@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Job extends Model
 {
@@ -17,4 +18,9 @@ class Job extends Model
         'degree',
         'description',
     ];
+
+    public function responsibilities(): HasMany
+    {
+        return $this->hasMany(JobResponsibility::class);
+    }
 }

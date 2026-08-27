@@ -30,11 +30,11 @@
 
                                        <div class="job-card__contents">
                                            <p class="job-card__title">
-                                               {{ $job['title'] }}
+                                               {{ $job->title }}
                                            </p>
 
                                            <p class="job-card__subtitle">
-                                               {{ $job['company'] }}
+                                               {{ $job->company }}
                                            </p>
                                        </div>
                                    </div>
@@ -43,22 +43,22 @@
                                        <ul class="job-card__meta">
                                            <li class="job-card__meta-item">
                                                <img src="images/bag.svg" alt="" />
-                                               <span>{{ $job['category'] }}</span>
+                                               <span>{{ $job->category }}</span>
                                            </li>
 
                                            <li class="job-card__meta-item">
                                                <img src="images/clock-job-card.svg" alt="" />
-                                               <span>{{ $job['type'] }}</span>
+                                               <span>{{ $job->type }}</span>
                                            </li>
 
                                            <li class="job-card__meta-item">
                                                <img src="images/wallet.svg" alt="" />
-                                               <span>{{ $job['salary'] }}</span>
+                                               <span>{{ $job->salary }}</span>
                                            </li>
 
                                            <li class="job-card__meta-item">
                                                <img src="images/location.svg" alt="" />
-                                               <span>{{ $job['location'] }}</span>
+                                               <span>{{ $job->location }}</span>
                                            </li>
                                        </ul>
 
@@ -74,24 +74,24 @@
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Job Description</h2>
                                    <p>
-                                       {{ $job['description'] }}
+                                       {{ $job->description }}
                                    </p>
                                </section>
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Key Responsibilities</h2>
                                    <ul class="job-details__list">
-                                       @foreach ($job['responsibilities'] as $responsibility)
+                                       @foreach ($job->responsibilities as $responsibility)
                                            <li class="job-details__item">
                                                <img src="images/check.svg" alt="" aria-hidden="true" />
 
                                                <p class="job-details__description">
-                                                   {{ $responsibility }}
+                                                   {{ $responsibility->responsibility }}
                                                </p>
                                            </li>
                                        @endforeach
                                    </ul>
                                </section>
-                               <section class="job-details__group">
+                               {{-- <section class="job-details__group">
                                    <h2 class="job-details__title">Professional Skills</h2>
                                    <ul class="job-details__list">
                                        @foreach ($job['skills'] as $skill)
@@ -113,7 +113,7 @@
                                            </li>
                                        @endforeach
                                    </ul>
-                               </section>
+                               </section> --}}
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Share Job:</h2>
 
@@ -165,10 +165,10 @@
                                                        <img src="images/jobs-7.svg" alt="" />
                                                        <div class="job-card__contents">
                                                            <p class="job-card__title">
-                                                               {{ $relatedJob['title'] }}
+                                                               {{ $relatedJob->title }}
                                                            </p>
                                                            <p class="job-card__subtitle">
-                                                               {{ $relatedJob['company'] }}
+                                                               {{ $relatedJob->company }}
                                                            </p>
                                                        </div>
                                                    </div>
@@ -176,28 +176,28 @@
                                                        <ul class="job-card__meta">
                                                            <li class="job-card__meta-item">
                                                                <img src="images/bag.svg" alt="" />
-                                                               <span>{{ $relatedJob['category'] }}</span>
+                                                               <span>{{ $relatedJob->category }}</span>
                                                            </li>
 
                                                            <li class="job-card__meta-item">
                                                                <img src="images/clock-job-card.svg" alt="" />
-                                                               <span>{{ $relatedJob['type'] }}</span>
+                                                               <span>{{ $relatedJob->type }}</span>
                                                            </li>
 
                                                            <li class="job-card__meta-item">
                                                                <img src="images/wallet.svg" alt="" />
-                                                               <span>{{ $relatedJob['salary'] }}</span>
+                                                               <span>{{ $relatedJob->salary }}</span>
                                                            </li>
 
                                                            <li class="job-card__meta-item">
                                                                <img src="images/location-details.svg" alt="" />
-                                                               <span>{{ $relatedJob['location'] }}</span>
+                                                               <span>{{ $relatedJob->location }}</span>
                                                            </li>
                                                        </ul>
 
                                                        <div class="job-card__details">
                                                            <a class="button"
-                                                               href="{{ route('job-details', ['id' => $relatedJob['id']]) }}">
+                                                               href="{{ route('job-details', ['id' => $relatedJob->id]) }}">
                                                                Job Details
                                                            </a>
                                                        </div>
@@ -220,7 +220,7 @@
                                            <span class="job-overview__label"> Job Title </span>
 
                                            <p class="job-overview__value">
-                                               {{ $job['title'] }}
+                                               {{ $job->title }}
                                            </p>
                                        </div>
                                    </li>
@@ -230,7 +230,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Job Type </span>
 
-                                           <p class="job-overview__value">{{ $job['type'] }}</p>
+                                           <p class="job-overview__value">{{ $job->type }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -239,7 +239,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Category </span>
 
-                                           <p class="job-overview__value">{{ $job['category'] }}</p>
+                                           <p class="job-overview__value">{{ $job->category }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -248,7 +248,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Experience </span>
 
-                                           <p class="job-overview__value">{{ $job['experience'] }}</p>
+                                           <p class="job-overview__value">{{ $job->experience }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -257,7 +257,8 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Degree </span>
 
-                                           <p class="job-overview__value">{{ $job['degree'] }}</p>
+                                           <p class="job-overview__value">{{ $job->degree }}
+                                           </p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -266,7 +267,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Offered Salary </span>
 
-                                           <p class="job-overview__value">{{ $job['salary'] }}</p>
+                                           <p class="job-overview__value">{{ $job->salary }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -275,7 +276,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Location </span>
 
-                                           <p class="job-overview__value">{{ $job['location'] }}</p>
+                                           <p class="job-overview__value">{{ $job->location }}</p>
                                        </div>
                                    </li>
                                </ul>

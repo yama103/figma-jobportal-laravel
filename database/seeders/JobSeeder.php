@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Data\JobData;
 use App\Models\Job;
+use App\Models\JobResponsibility;
 use Illuminate\Database\Seeder;
 
 class JobSeeder extends Seeder
@@ -16,7 +17,7 @@ class JobSeeder extends Seeder
         $jobs = JobData::all();
 
         foreach ($jobs as $job) {
-            Job::create([
+            $createdJob = Job::create([
                 'title' => $job['title'],
                 'company' => $job['company'],
                 'category' => $job['category'],
@@ -27,6 +28,13 @@ class JobSeeder extends Seeder
                 'degree' => $job['degree'],
                 'description' => $job['description'],
             ]);
+
+            foreach ($job['responsibilities'] as $responsibility) {
+                JobResponsibility::create([
+                    'job_id' => $createdJob->id,
+                    'responsibility' => $responsibility,
+                ]);
+            }
         }
     }
 }
