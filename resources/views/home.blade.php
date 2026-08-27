@@ -12,20 +12,20 @@
                             Success
                         </p>
                     </div>
-                    <form class="hero__search">
+                    <form class="hero__search" action="{{ route('jobs') }}" method="GET">
                         <div class="hero__fields">
-                            <input class="form__input" type="text" placeholder="Job Title or Company" />
+                            <input class="form__input" type="text" name="keyword" placeholder="Job Title or Company" />
                             <div class="form__select-wrapper">
-                                <select class="form__select">
-                                    <option>Select Location</option>
+                                <select class="form__select" name="location">
+                                    <option value="">Select Location</option>
                                 </select>
 
                                 <img class="form__select-icon" src="images/chevron-down.svg" alt=""
                                     aria-hidden="true" />
                             </div>
                             <div class="form__select-wrapper">
-                                <select class="form__select">
-                                    <option>Select Category</option>
+                                <select class="form__select" name="category">
+                                    <option value="">Select Category</option>
                                 </select>
 
                                 <img class="form__select-icon" src="images/chevron-down.svg" alt=""
