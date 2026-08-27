@@ -18,8 +18,13 @@ class JobDetailsController extends Controller
             abort(404);
         }
 
+        $relatedJobs = $jobs->reject(function ($item) use ($id) {
+            return $item['id'] == $id;
+        });
+
         return view('job-details', [
             'job' => $job,
+            'relatedJobs' => $relatedJobs,
         ]);
     }
 }

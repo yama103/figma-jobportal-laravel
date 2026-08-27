@@ -7,7 +7,7 @@ class JobData
     public static function all(): array
     {
         return [
-             [
+            [
                 'id' => 1,
                 'title' => 'Forward Security Director',
                 'company' => 'Bauch, Schuppe and Schulist Co',
@@ -15,6 +15,26 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$40000-$42000',
                 'location' => 'New-York, USA',
+                'experience' => '5 Years',
+                'degree' => 'Master',
+                'description' => 'We are looking for an experienced Security Director to lead our security operations and develop effective strategies to protect our guests, employees, and business assets. The successful candidate will work closely with management and various departments to maintain a safe and secure environment.',
+                'responsibilities' => [
+                    'Develop and implement security policies and procedures across the organization.',
+                    'Lead and manage the security team while ensuring daily operations run smoothly.',
+                    'Identify potential security risks and take appropriate measures to prevent incidents.',
+                    'Work closely with management and other departments to maintain a safe environment for guests and employees.',
+                ],
+                'skills' => [
+                    'Strong leadership and team management skills.',
+                    'Excellent communication and problem-solving abilities.',
+                    'Experience in security operations and risk management.',
+                ],
+                'tags' => [
+                    'Full time',
+                    'Hotels & Tourism',
+                    'Security',
+                    'New-York',
+                ],
             ],
             [
                 'id' => 2,
@@ -24,6 +44,26 @@ class JobData
                 'type' => 'Part time',
                 'salary' => '$28000-$32000',
                 'location' => 'Los-Angeles, USA',
+                'experience' => '3 Years',
+                'degree' => 'Bachelor',
+                'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
+                'responsibilities' => [
+                    'Develop creative strategies and coordinate projects across multiple teams.',
+                    'Manage communication with internal teams and external partners.',
+                    'Monitor project progress and ensure deadlines are met.',
+                    'Prepare reports and presentations for management.',
+                ],
+                'skills' => [
+                    'Strong communication and presentation skills.',
+                    'Experience with creative project management.',
+                    'Ability to work independently and as part of a team.',
+                ],
+                'tags' => [
+                    'Part time',
+                    'Media',
+                    'Creative',
+                    'Los-Angeles',
+                ],
             ],
             [
                 'id' => 3,
@@ -33,6 +73,26 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$48000-$50000',
                 'location' => 'Texas, USA',
+                'experience' => '5 Years',
+                'degree' => 'Master',
+                'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
+                'responsibilities' => [
+                    'Coordinate internal integration projects from planning through completion.',
+                    'Work with construction teams to improve project workflows.',
+                    'Identify potential issues and develop effective solutions.',
+                    'Maintain project documentation and schedules.',
+                ],
+                'skills' => [
+                    'Project planning and coordination.',
+                    'Knowledge of construction processes.',
+                    'Strong organizational and problem-solving skills.',
+                ],
+                'tags' => [
+                    'Full time',
+                    'Construction',
+                    'Planning',
+                    'Texas',
+                ],
             ],
             [
                 'id' => 4,
@@ -42,6 +102,26 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$42000-$48000',
                 'location' => 'Florida, USA',
+                'experience' => '7 Years',
+                'degree' => 'Master',
+                'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
+                'responsibilities' => [
+                    'Lead intranet operations and improve internal communication systems.',
+                    'Develop strategies to support district-wide business operations.',
+                    'Coordinate with different departments and stakeholders.',
+                    'Analyze performance and recommend improvements.',
+                ],
+                'skills' => [
+                    'Leadership and team management.',
+                    'Experience with internal communication platforms.',
+                    'Strategic planning and business analysis.',
+                ],
+                'tags' => [
+                    'Full time',
+                    'Commerce',
+                    'Corporate',
+                    'Florida',
+                ],
             ],
             [
                 'id' => 5,
@@ -51,6 +131,26 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$38000-$40000',
                 'location' => 'Boston, USA',
+                'experience' => '4 Years',
+                'degree' => 'Bachelor',
+                'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
+                'responsibilities' => [
+                    'Support corporate teams in developing effective business strategies.',
+                    'Facilitate meetings and coordinate cross-functional projects.',
+                    'Analyze business requirements and prepare recommendations.',
+                    'Assist management with strategic planning activities.',
+                ],
+                'skills' => [
+                    'Business communication skills.',
+                    'Strategic thinking and problem-solving.',
+                    'Experience working with cross-functional teams.',
+                ],
+                'tags' => [
+                    'Full time',
+                    'Commerce',
+                    'Corporate',
+                    'Boston',
+                ],
             ],
             [
                 'id' => 6,
@@ -60,6 +160,26 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$45000-$48000',
                 'location' => 'Boston, USA',
+                'experience' => '6 Years',
+                'degree' => 'Master',
+                'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
+                'responsibilities' => [
+                    'Provide financial consulting support to corporate clients.',
+                    'Analyze account information and identify business opportunities.',
+                    'Prepare financial reports and recommendations.',
+                    'Maintain strong relationships with clients and internal teams.',
+                ],
+                'skills' => [
+                    'Financial analysis and reporting.',
+                    'Strong numerical and analytical skills.',
+                    'Excellent client communication skills.',
+                ],
+                'tags' => [
+                    'Full time',
+                    'Financial services',
+                    'Consulting',
+                    'Boston',
+                ],
             ],
         ];
     }

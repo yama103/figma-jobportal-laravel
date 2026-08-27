@@ -74,131 +74,44 @@
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Job Description</h2>
                                    <p>
-                                       Nunc sed a nisl purus. Nibh dis faucibus proin lacus
-                                       tristique. Sit congue non vitae odio sit erat in. Felis eu
-                                       ultrices a sed massa. Commodo fringilla sed tempor risus
-                                       laoreet ultricies ipsum. Habitasse morbi faucibus in iaculis
-                                       lectus. Nisi enim feugiat enim volutpat. Sem quis viverra
-                                       viverra odio mauris nunc. Et nunc ut tempus duis nisl sed
-                                       massa. Ornare varius faucibus nisi vitae vitae cras ornare.
-                                       Cras facilisis dignissim augue lorem amet adipiscing cursus
-                                       fames mauris. Tortor amet porta proin in. Orci imperdiet
-                                       nisi dignissim pellentesque morbi vitae. Quisque tincidunt
-                                       metus lectus porta eget blandit euismod sem nunc. Tortor
-                                       gravida amet amet sapien mauris massa.Tortor varius nam
-                                       maecenas duis blandit elit sit sit. Ante mauris morbi diam
-                                       habitant donec.
+                                       {{ $job['description'] }}
                                    </p>
                                </section>
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Key Responsibilities</h2>
                                    <ul class="job-details__list">
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Et nunc ut tempus duis nisl sed massa. Ornare varius
-                                               faucibus nisi vitae vitae cras ornare. Cras facilisis
-                                               dignissim augu
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Cras facilisis dignissim augue lorem amet adipiscing
-                                               cursus fames mauris. Tortor amet porta proin in
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Ornare varius faucibus nisi vitae vitae cras ornare.
-                                               Cras facilisis dignissim augue lorem amet adipiscing
-                                               cursus fames
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae. Quisque tincidunt
-                                               metus lectus porta
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae. Quisque tincidunt
-                                               metus lectus porta
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae. Quisque tincidunt
-                                               metus lectus porta
-                                           </p>
-                                       </li>
+                                       @foreach ($job['responsibilities'] as $responsibility)
+                                           <li class="job-details__item">
+                                               <img src="images/check.svg" alt="" aria-hidden="true" />
+
+                                               <p class="job-details__description">
+                                                   {{ $responsibility }}
+                                               </p>
+                                           </li>
+                                       @endforeach
                                    </ul>
                                </section>
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Professional Skills</h2>
                                    <ul class="job-details__list">
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Et nunc ut tempus duis nisl sed massa. Ornare varius
-                                               faucibus nisi vitae vitae cras ornare.
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Ornare varius faucibus nisi vitae vitae cras ornare.
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae.
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae.
-                                           </p>
-                                       </li>
-                                       <li class="job-details__item">
-                                           <img src="images/check.svg" alt="" aria-hidden="true" />
-                                           <p class="job-details__description">
-                                               Tortor amet porta proin in. Orci imperdiet nisi
-                                               dignissim pellentesque morbi vitae.
-                                           </p>
-                                       </li>
+                                       @foreach ($job['skills'] as $skill)
+                                           <li class="job-details__item">
+                                               <img src="images/check.svg" alt="" aria-hidden="true" />
+                                               <p class="job-details__description">
+                                                   {{ $skill }}
+                                               </p>
+                                           </li>
+                                       @endforeach
                                    </ul>
                                </section>
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Tags:</h2>
                                    <ul class="job-tag__list">
-                                       <li class="badge">
-                                           <a href="#">Full time</a>
-                                       </li>
-                                       <li class="badge">
-                                           <a href="#">Commerce</a>
-                                       </li>
-                                       <li class="badge">
-                                           <a href="#">New - York</a>
-                                       </li>
-                                       <li class="badge">
-                                           <a href="#">Corporate</a>
-                                       </li>
-                                       <li class="badge">
-                                           <a href="#">Location</a>
-                                       </li>
+                                       @foreach ($job['tags'] as $tag)
+                                           <li class="badge">
+                                               <a href="#">{{ $tag }}</a>
+                                           </li>
+                                       @endforeach
                                    </ul>
                                </section>
                                <section class="job-details__group">
@@ -236,165 +149,62 @@
 
                                <div class="related-jobs__body">
                                    <ul class="jobs__list">
-                                       <li class="jobs__item">
-                                           <article class="job-card">
-                                               <div class="job-card__top">
-                                                   <div class="badge">
-                                                       <span>15 min ago</span>
+                                       @foreach ($relatedJobs as $relatedJob)
+                                           <li class="jobs__item">
+                                               <article class="job-card">
+                                                   <div class="job-card__top">
+                                                       <div class="badge">
+                                                           <span>15 min ago</span>
+                                                       </div>
+                                                       <button class="job-card__favorite" type="button"
+                                                           aria-label="Add to favorites">
+                                                           <img src="images/plus.svg" alt="" />
+                                                       </button>
                                                    </div>
-                                                   <button class="job-card__favorite" type="button"
-                                                       aria-label="Add to favorites">
-                                                       <img src="images/plus.svg" alt="" />
-                                                   </button>
-                                               </div>
-                                               <div class="job-card__main">
-                                                   <img src="images/jobs-7.svg" alt="" />
-                                                   <div class="job-card__contents">
-                                                       <p class="job-card__title">
-                                                           Internal Integration Planner
-                                                       </p>
-                                                       <p class="job-card__subtitle">
-                                                           Mraz, Quigley and Feest Inc.
-                                                       </p>
+                                                   <div class="job-card__main">
+                                                       <img src="images/jobs-7.svg" alt="" />
+                                                       <div class="job-card__contents">
+                                                           <p class="job-card__title">
+                                                               {{ $relatedJob['title'] }}
+                                                           </p>
+                                                           <p class="job-card__subtitle">
+                                                               {{ $relatedJob['company'] }}
+                                                           </p>
+                                                       </div>
                                                    </div>
-                                               </div>
-                                               <div class="job-card__bottom">
-                                                   <ul class="job-card__meta">
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/bag.svg" alt="" />
-                                                           <span>Construction</span>
-                                                       </li>
+                                                   <div class="job-card__bottom">
+                                                       <ul class="job-card__meta">
+                                                           <li class="job-card__meta-item">
+                                                               <img src="images/bag.svg" alt="" />
+                                                               <span>{{ $relatedJob['category'] }}</span>
+                                                           </li>
 
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/clock-job-card.svg" alt="" />
-                                                           <span>Full time</span>
-                                                       </li>
+                                                           <li class="job-card__meta-item">
+                                                               <img src="images/clock-job-card.svg" alt="" />
+                                                               <span>{{ $relatedJob['type'] }}</span>
+                                                           </li>
 
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/wallet.svg" alt="" />
-                                                           <span>$48000-$50000</span>
-                                                       </li>
+                                                           <li class="job-card__meta-item">
+                                                               <img src="images/wallet.svg" alt="" />
+                                                               <span>{{ $relatedJob['salary'] }}</span>
+                                                           </li>
 
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/location-details.svg" alt="" />
-                                                           <span>Texas, USA</span>
-                                                       </li>
-                                                   </ul>
+                                                           <li class="job-card__meta-item">
+                                                               <img src="images/location-details.svg" alt="" />
+                                                               <span>{{ $relatedJob['location'] }}</span>
+                                                           </li>
+                                                       </ul>
 
-                                                   <div class="job-card__details">
-                                                       <a class="button" href="job-details.html">
-                                                           Job Details
-                                                       </a>
+                                                       <div class="job-card__details">
+                                                           <a class="button"
+                                                               href="{{ route('job-details', ['id' => $relatedJob['id']]) }}">
+                                                               Job Details
+                                                           </a>
+                                                       </div>
                                                    </div>
-                                               </div>
-                                           </article>
-                                       </li>
-                                       <li class="jobs__item">
-                                           <article class="job-card">
-                                               <div class="job-card__top">
-                                                   <div class="badge">
-                                                       <span>15 min ago</span>
-                                                   </div>
-                                                   <button class="job-card__favorite" type="button"
-                                                       aria-label="Add to favorites">
-                                                       <img src="images/plus.svg" alt="" />
-                                                   </button>
-                                               </div>
-                                               <div class="job-card__main">
-                                                   <img src="images/jobs-4.svg" alt="" />
-                                                   <div class="job-card__contents">
-                                                       <p class="job-card__title">
-                                                           Internal Integration Planner
-                                                       </p>
-                                                       <p class="job-card__subtitle">
-                                                           Mraz, Quigley and Feest Inc.
-                                                       </p>
-                                                   </div>
-                                               </div>
-                                               <div class="job-card__bottom">
-                                                   <ul class="job-card__meta">
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/bag.svg" alt="" />
-                                                           <span>Construction</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/clock-job-card.svg" alt="" />
-                                                           <span>Full time</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/wallet.svg" alt="" />
-                                                           <span>$48000-$50000</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/location.svg" alt="" />
-                                                           <span>Texas, USA</span>
-                                                       </li>
-                                                   </ul>
-
-                                                   <div class="job-card__details">
-                                                       <a class="button" href="job-details.html">
-                                                           Job Details
-                                                       </a>
-                                                   </div>
-                                               </div>
-                                           </article>
-                                       </li>
-                                       <li class="jobs__item">
-                                           <article class="job-card">
-                                               <div class="job-card__top">
-                                                   <div class="badge">
-                                                       <span>15 min ago</span>
-                                                   </div>
-                                                   <button class="job-card__favorite" type="button"
-                                                       aria-label="Add to favorites">
-                                                       <img src="images/plus.svg" alt="" />
-                                                   </button>
-                                               </div>
-                                               <div class="job-card__main">
-                                                   <img src="images/jobs-5.svg" alt="" />
-                                                   <div class="job-card__contents">
-                                                       <p class="job-card__title">
-                                                           Internal Integration Planner
-                                                       </p>
-                                                       <p class="job-card__subtitle">
-                                                           Mraz, Quigley and Feest Inc.
-                                                       </p>
-                                                   </div>
-                                               </div>
-                                               <div class="job-card__bottom">
-                                                   <ul class="job-card__meta">
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/bag.svg" alt="" />
-                                                           <span>Construction</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/clock-job-card.svg" alt="" />
-                                                           <span>Full time</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/wallet.svg" alt="" />
-                                                           <span>$48000-$50000</span>
-                                                       </li>
-
-                                                       <li class="job-card__meta-item">
-                                                           <img src="images/location.svg" alt="" />
-                                                           <span>Texas, USA</span>
-                                                       </li>
-                                                   </ul>
-
-                                                   <div class="job-card__details">
-                                                       <a class="button" href="job-details.html">
-                                                           Job Details
-                                                       </a>
-                                                   </div>
-                                               </div>
-                                           </article>
-                                       </li>
+                                               </article>
+                                           </li>
+                                       @endforeach
                                    </ul>
                                </div>
                            </section>
@@ -410,7 +220,7 @@
                                            <span class="job-overview__label"> Job Title </span>
 
                                            <p class="job-overview__value">
-                                               Corporate Solutions Executive
+                                               {{ $job['title'] }}
                                            </p>
                                        </div>
                                    </li>
@@ -420,7 +230,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Job Type </span>
 
-                                           <p class="job-overview__value">Full Time</p>
+                                           <p class="job-overview__value">{{ $job['type'] }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -429,7 +239,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Category </span>
 
-                                           <p class="job-overview__value">Commerce</p>
+                                           <p class="job-overview__value">{{ $job['category'] }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -438,7 +248,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Experience </span>
 
-                                           <p class="job-overview__value">5 Years</p>
+                                           <p class="job-overview__value">{{ $job['experience'] }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -447,7 +257,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Degree </span>
 
-                                           <p class="job-overview__value">Master</p>
+                                           <p class="job-overview__value">{{ $job['degree'] }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -456,7 +266,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Offered Salary </span>
 
-                                           <p class="job-overview__value">$40000-$42000</p>
+                                           <p class="job-overview__value">{{ $job['salary'] }}</p>
                                        </div>
                                    </li>
                                    <li class="job-overview__item">
@@ -465,7 +275,7 @@
                                        <div class="job-overview__content">
                                            <span class="job-overview__label"> Location </span>
 
-                                           <p class="job-overview__value">New-York, USA</p>
+                                           <p class="job-overview__value">{{ $job['location'] }}</p>
                                        </div>
                                    </li>
                                </ul>
