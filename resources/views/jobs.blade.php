@@ -304,7 +304,7 @@
                                          </div>
 
                                          <div class="job-card__main">
-                                             <img src="images/jobs-1.svg" alt="" />
+                                             <img src="{{ asset('images/jobs-1.svg') }}" alt="" />
                                              <div class="job-card__contents">
                                                  <p class="job-card__title">{{ $job->title }}</p>
                                                  <p class="job-card__subtitle">
