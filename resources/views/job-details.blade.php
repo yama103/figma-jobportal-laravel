@@ -91,14 +91,14 @@
                                        @endforeach
                                    </ul>
                                </section>
-                               {{-- <section class="job-details__group">
+                               <section class="job-details__group">
                                    <h2 class="job-details__title">Professional Skills</h2>
                                    <ul class="job-details__list">
-                                       @foreach ($job['skills'] as $skill)
+                                       @foreach ($job->skills as $skill)
                                            <li class="job-details__item">
                                                <img src="images/check.svg" alt="" aria-hidden="true" />
                                                <p class="job-details__description">
-                                                   {{ $skill }}
+                                                   {{ $skill->skill }}
                                                </p>
                                            </li>
                                        @endforeach
@@ -107,13 +107,13 @@
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Tags:</h2>
                                    <ul class="job-tag__list">
-                                       @foreach ($job['tags'] as $tag)
+                                       @foreach ($job->tags as $tag)
                                            <li class="badge">
-                                               <a href="#">{{ $tag }}</a>
+                                               <a href="#">{{ $tag->tag }}</a>
                                            </li>
                                        @endforeach
                                    </ul>
-                               </section> --}}
+                               </section>
                                <section class="job-details__group">
                                    <h2 class="job-details__title">Share Job:</h2>
 

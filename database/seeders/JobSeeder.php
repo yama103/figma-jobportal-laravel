@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Data\JobData;
 use App\Models\Job;
 use App\Models\JobResponsibility;
+use App\Models\JobSkill;
+use App\Models\JobTag;
 use Illuminate\Database\Seeder;
 
 class JobSeeder extends Seeder
@@ -33,6 +35,19 @@ class JobSeeder extends Seeder
                 JobResponsibility::create([
                     'job_id' => $createdJob->id,
                     'responsibility' => $responsibility,
+                ]);
+            }
+
+            foreach ($job['skills'] as $skill) {
+                JobSkill::create([
+                    'job_id' => $createdJob->id,
+                    'skill' => $skill,
+                ]);
+            }
+            foreach ($job['tags'] as $tag) {
+                JobTag::create([
+                    'job_id' => $createdJob->id,
+                    'tag' => $tag,
                 ]);
             }
         }

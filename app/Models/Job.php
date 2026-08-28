@@ -23,4 +23,13 @@ class Job extends Model
     {
         return $this->hasMany(JobResponsibility::class);
     }
+
+    public function skills()
+    {
+        return $this->hasMany(JobSkill::class);
+    }
+    public function tags()
+    {
+        return $this->hasMany(JobTag::class);
+    }
 }
