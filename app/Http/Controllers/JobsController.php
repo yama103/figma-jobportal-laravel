@@ -42,6 +42,14 @@ class JobsController extends Controller
             $query->where('location', $location);
         }
 
+        $tag = $request->input('tag');
+
+        if ($tag) {
+            $query->whereHas('tags', function ($query) use ($tag) {
+                $query->where('tag', $tag);
+            });
+        }
+
         $experience = $request->input('experience');
 
         if ($experience === 'no-experience') {

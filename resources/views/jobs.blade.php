@@ -203,25 +203,39 @@
                                  <h3 class="job-filter__title">Tags</h3>
                                  <ul class="job-filter__tags">
                                      <li class="badge">
-                                         <a href="#">engineering</a>
+                                         <a href="{{ route('jobs', ['tag' => 'engineering']) }}">
+                                             engineering
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">design</a>
+                                         <a href="{{ route('jobs', ['tag' => 'construction']) }}">
+                                             construction
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">ui/ux</a>
+                                         <a href="{{ route('jobs', ['tag' => 'creative']) }}">
+                                             creative
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">marketing</a>
+                                         <a href="{{ route('jobs', ['tag' => 'corporate']) }}">
+                                             corporate
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">management</a>
+                                         <a href="{{ route('jobs', ['tag' => 'consulting']) }}">
+                                             consulting
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">soft</a>
+                                         <a href="{{ route('jobs', ['tag' => 'agriculture']) }}">
+                                             agriculture
+                                         </a>
                                      </li>
                                      <li class="badge">
-                                         <a href="#">construction</a>
+                                         <a href="{{ route('jobs', ['tag' => 'logistics']) }}">
+                                             logistics
+                                         </a>
                                      </li>
                                  </ul>
                              </div>

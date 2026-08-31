@@ -30,10 +30,10 @@ class JobData
                     'Experience in security operations and risk management.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Hotels & Tourism',
-                    'Security',
-                    'New-York',
+                    'full time',
+                    'hotels & tourism',
+                    'security',
+                    'new-york',
                 ],
             ],
 
@@ -60,10 +60,10 @@ class JobData
                     'Ability to work independently and as part of a team.',
                 ],
                 'tags' => [
-                    'Part time',
-                    'Media',
-                    'Creative',
-                    'Los-Angeles',
+                    'part time',
+                    'media',
+                    'creative',
+                    'los-angeles',
                 ],
             ],
 
@@ -90,10 +90,10 @@ class JobData
                     'Strong organizational and problem-solving skills.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Construction',
-                    'Planning',
-                    'Texas',
+                    'full time',
+                    'construction',
+                    'planning',
+                    'texas',
                 ],
             ],
 
@@ -120,10 +120,10 @@ class JobData
                     'Strategic planning and business analysis.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Commerce',
-                    'Corporate',
-                    'Florida',
+                    'full time',
+                    'commerce',
+                    'corporate',
+                    'florida',
                 ],
             ],
 
@@ -150,10 +150,10 @@ class JobData
                     'Experience working with cross-functional teams.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Commerce',
-                    'Corporate',
-                    'Boston',
+                    'full time',
+                    'commerce',
+                    'corporate',
+                    'boston',
                 ],
             ],
 
@@ -180,10 +180,10 @@ class JobData
                     'Excellent client communication skills.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Financial Services',
-                    'Consulting',
-                    'Boston',
+                    'full time',
+                    'financial services',
+                    'consulting',
+                    'boston',
                 ],
             ],
 
@@ -210,10 +210,10 @@ class JobData
                     'Knowledge of farming processes and equipment.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Agriculture',
-                    'Operations',
-                    'Iowa',
+                    'full time',
+                    'agriculture',
+                    'operations',
+                    'iowa',
                 ],
             ],
 
@@ -240,10 +240,10 @@ class JobData
                     'Basic knowledge of agricultural operations.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Agriculture',
-                    'Production',
-                    'Nebraska',
+                    'full time',
+                    'agriculture',
+                    'production',
+                    'nebraska',
                 ],
             ],
 
@@ -270,10 +270,10 @@ class JobData
                     'Strong leadership and problem-solving skills.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Metal Production',
-                    'Manufacturing',
-                    'Ohio',
+                    'full time',
+                    'metal production',
+                    'manufacturing',
+                    'ohio',
                 ],
             ],
 
@@ -300,10 +300,10 @@ class JobData
                     'Experience with production systems.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Metal Production',
-                    'Engineering',
-                    'Michigan',
+                    'full time',
+                    'metal production',
+                    'engineering',
+                    'michigan',
                 ],
             ],
 
@@ -330,10 +330,10 @@ class JobData
                     'Excellent organizational abilities.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Education',
-                    'Program Management',
-                    'Chicago',
+                    'full time',
+                    'education',
+                    'program management',
+                    'chicago',
                 ],
             ],
 
@@ -360,10 +360,10 @@ class JobData
                     'Strong organizational skills.',
                 ],
                 'tags' => [
-                    'Part time',
-                    'Education',
-                    'Student Support',
-                    'Boston',
+                    'part time',
+                    'education',
+                    'student support',
+                    'boston',
                 ],
             ],
 
@@ -390,10 +390,10 @@ class JobData
                     'Excellent presentation and communication skills.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Financial Services',
-                    'Finance',
-                    'New-York',
+                    'full time',
+                    'financial services',
+                    'finance',
+                    'new-york',
                 ],
             ],
 
@@ -420,10 +420,10 @@ class JobData
                     'Knowledge of financial services.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Financial Services',
-                    'Client Relations',
-                    'California',
+                    'full time',
+                    'financial services',
+                    'client relations',
+                    'california',
                 ],
             ],
 
@@ -450,10 +450,10 @@ class JobData
                     'Problem-solving and decision-making abilities.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Transport',
-                    'Logistics',
-                    'Texas',
+                    'full time',
+                    'transport',
+                    'logistics',
+                    'texas',
                 ],
             ],
 
@@ -480,10 +480,10 @@ class JobData
                     'Good communication and coordination abilities.',
                 ],
                 'tags' => [
-                    'Part time',
-                    'Transport',
-                    'Fleet Management',
-                    'Florida',
+                    'part time',
+                    'transport',
+                    'fleet management',
+                    'florida',
                 ],
             ],
 
@@ -510,10 +510,10 @@ class JobData
                     'Business analysis and problem-solving abilities.',
                 ],
                 'tags' => [
-                    'Full time',
-                    'Commerce',
-                    'Retail',
-                    'New-York',
+                    'full time',
+                    'commerce',
+                    'retail',
+                    'new-york',
                 ],
             ],
         ];
