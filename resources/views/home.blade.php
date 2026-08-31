@@ -98,7 +98,7 @@
                                 At eu lobortis pretium tincidunt amet lacus ut aenean aliquet
                             </p>
                         </div>
-                        <a class="viewall-link viewall-link--desktop" href="jobs.html">View all</a>
+                        <a class="viewall-link viewall-link--desktop" href="{{ route('jobs') }}">View all</a>
                     </div>
 
                     <ul class="jobs__list">

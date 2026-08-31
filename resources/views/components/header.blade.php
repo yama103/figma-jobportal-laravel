@@ -14,16 +14,19 @@
 
                <nav class="header__nav">
                    <ul class="header__list">
-                       <li class="header__item is-active">
+                       <li class="header__item {{ request()->routeIs('home') ? 'is-active' : '' }}">
                            <a href="{{ route('home') }}">Home</a>
                        </li>
-                       <li class="header__item">
+
+                       <li class="header__item {{ request()->routeIs('jobs') ? 'is-active' : '' }}">
                            <a href="{{ route('jobs') }}">Jobs</a>
                        </li>
-                       <li class="header__item">
+
+                       <li class="header__item {{ request()->routeIs('about-us') ? 'is-active' : '' }}">
                            <a href="{{ route('about-us') }}">About Us</a>
                        </li>
-                       <li class="header__item">
+
+                       <li class="header__item {{ request()->routeIs('contact-us') ? 'is-active' : '' }}">
                            <a href="{{ route('contact-us') }}">Contact Us</a>
                        </li>
                    </ul>

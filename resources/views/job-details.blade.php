@@ -1,4 +1,3 @@
-```blade
 @extends('layouts.app')
 
 @section('content')
@@ -282,9 +281,7 @@
                                     <div class="job-overview__content">
                                         <span class="job-overview__label">Experience</span>
 
-                                        <p class="job-overview__value">
-                                            {{ $job->experience }}
-                                        </p>
+                                        <p class="job-overview__value">{{ $job->experience }} Years</p>
                                     </div>
                                 </li>
 
@@ -379,4 +376,3 @@
         </div>
     </main>
 @endsection
-```

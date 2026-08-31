@@ -53,129 +53,94 @@
                              </div>
 
                              <!-- Category -->
+                             @php
+                                 $categories = [
+                                     'Hotels & Tourism',
+                                     'Media',
+                                     'Construction',
+                                     'Commerce',
+                                     'Financial Services',
+                                 ];
+                             @endphp
+
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Category</h3>
+
                                  <ul class="job-filter__list">
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="Hotels & Tourism"
-                                                 @if (request('category') === 'Hotels & Tourism') checked @endif />
-                                             <span class="job-filter__text">Hotels & Tourism</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="Media"
-                                                 @if (request('category') === 'Media') checked @endif />
-                                             <span class="job-filter__text">Media</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="Construction"
-                                                 @if (request('category') === 'Construction') checked @endif />
-                                             <span class="job-filter__text">Construction</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="Commerce"
-                                                 @if (request('category') === 'Commerce') checked @endif />
-                                             <span class="job-filter__text">Commerce</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="category" value="Financial services"
-                                                 @if (request('category') === 'Financial services') checked @endif />
-                                             <span class="job-filter__text">Financial services</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
+                                     @foreach ($categories as $category)
+                                         <li class="job-filter__item">
+                                             <label class="job-filter__label">
+                                                 <input type="checkbox" name="category" value="{{ $category }}"
+                                                     @if (request('category') === $category) checked @endif />
+
+                                                 <span class="job-filter__text">
+                                                     {{ $category }}
+                                                 </span>
+
+                                                 <span class="job-filter__count">
+                                                     {{ $categoryCounts[$category] ?? 0 }}
+                                                 </span>
+                                             </label>
+                                         </li>
+                                     @endforeach
                                  </ul>
+
                                  <button type="button" class="job-filter__more">
                                      Show More
                                  </button>
                              </div>
                              <!-- Job Type -->
+
+                             @php
+                                 $jobTypes = ['Full time', 'Part time', 'Freelance', 'Seasonal', 'Fixed-Price'];
+                             @endphp
+
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Job Type</h3>
                                  <ul class="job-filter__list">
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="job_type" value="Full time"
-                                                 @if (request('job_type') === 'Full time') checked @endif />
-                                             <span class="job-filter__text">Full Time</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="job_type" value="Part time"
-                                                 @if (request('job_type') === 'Part time') checked @endif />
-                                             <span class="job-filter__text">Part Time</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="job_type" value="Freelance" />
-                                             <span class="job-filter__text">Freelance</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="job_type" value="Seasonal" />
-                                             <span class="job-filter__text">Seasonal</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="job_type" value="Fixed-Price" />
-                                             <span class="job-filter__text">Fixed-Price</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
+                                     @foreach ($jobTypes as $jobType)
+                                         <li class="job-filter__item">
+                                             <label class="job-filter__label">
+                                                 <input type="checkbox" name="job_type" value="{{ $jobType }}"
+                                                     @if (request('job_type') === $jobType) checked @endif />
+                                                 <span class="job-filter__text">
+                                                     {{ $jobType }}
+                                                 </span>
+                                                 <span class="job-filter__count">
+                                                     {{ $typeCounts[$jobType] ?? 0 }}
+                                                 </span>
+                                             </label>
+                                         </li>
+                                     @endforeach
                                  </ul>
                              </div>
                              <!-- Experience Level -->
+                             @php
+                                 $experienceLevels = [
+                                     'no-experience' => 'No-experience',
+                                     'fresher' => 'Fresher',
+                                     'intermediate' => 'Intermediate',
+                                     'expert' => 'Expert',
+                                 ];
+                             @endphp
+
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Experience Level</h3>
                                  <ul class="job-filter__list">
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="experience" value="no-experience" />
-                                             <span class="job-filter__text">No-experience</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="experience" value="fresher" />
-                                             <span class="job-filter__text">Fresher</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="experience" value="intermediate" />
-                                             <span class="job-filter__text">Intermediate</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="experience" value="expert" />
-                                             <span class="job-filter__text">Expert</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
+                                     @foreach ($experienceLevels as $key => $label)
+                                         <li class="job-filter__item">
+                                             <label class="job-filter__label">
+                                                 <input type="checkbox" name="experience" value="{{ $key }}"
+                                                     @if (request('experience') === $key) checked @endif />
+                                                 <span class="job-filter__text">
+                                                     {{ $label }}
+                                                 </span>
+                                                 <span class="job-filter__count">
+                                                     {{ $experienceCounts[$key] ?? 0 }}
+                                                 </span>
+                                             </label>
+                                         </li>
+                                     @endforeach
                                  </ul>
                              </div>
                              <!-- Date Posted -->
@@ -276,7 +241,7 @@
 
                      <div class="jobs__content">
                          <div class="jobs__toolbar">
-                             <p class="jobs__result">Showing 1-6 of 10 results</p>
+                             <p class="jobs__result">Showing 1-10 of All results</p>
                              <div class="jobs__sort-wrapper">
                                  <select class="jobs__sort">
                                      <option value="latest">Sort by latest</option>

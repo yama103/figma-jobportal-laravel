@@ -15,7 +15,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$40000-$42000',
                 'location' => 'New-York, USA',
-                'experience' => '5 Years',
+                'experience' => 5,
                 'degree' => 'Master',
                 'description' => 'We are looking for an experienced Security Director to lead our security operations and develop effective strategies to protect our guests, employees, and business assets. The successful candidate will work closely with management and various departments to maintain a safe and secure environment.',
                 'responsibilities' => [
@@ -45,7 +45,7 @@ class JobData
                 'type' => 'Part time',
                 'salary' => '$28000-$32000',
                 'location' => 'Los-Angeles, USA',
-                'experience' => '3 Years',
+                'experience' => 3,
                 'degree' => 'Bachelor',
                 'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
                 'responsibilities' => [
@@ -75,7 +75,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$48000-$50000',
                 'location' => 'Texas, USA',
-                'experience' => '5 Years',
+                'experience' => 5,
                 'degree' => 'Master',
                 'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
                 'responsibilities' => [
@@ -105,7 +105,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$42000-$48000',
                 'location' => 'Florida, USA',
-                'experience' => '7 Years',
+                'experience' => 7,
                 'degree' => 'Master',
                 'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
                 'responsibilities' => [
@@ -135,7 +135,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$38000-$40000',
                 'location' => 'Boston, USA',
-                'experience' => '4 Years',
+                'experience' => 4,
                 'degree' => 'Bachelor',
                 'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
                 'responsibilities' => [
@@ -165,7 +165,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$45000-$48000',
                 'location' => 'Boston, USA',
-                'experience' => '6 Years',
+                'experience' => 6,
                 'degree' => 'Master',
                 'description' => 'Nunc sed a nisl purus. Nibh dis faucibus proin lacus tristique. Sit congue non vitae odio sit erat in. Felis eu ultrices a sed massa. Commodo fringilla sed tempor risus laoreet ultricies ipsum.',
                 'responsibilities' => [
@@ -195,7 +195,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$42000-$46000',
                 'location' => 'Iowa, USA',
-                'experience' => '5 Years',
+                'experience' => 5,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for an experienced Agricultural Operations Manager to oversee daily farming operations and improve productivity across multiple sites.',
                 'responsibilities' => [
@@ -225,7 +225,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$34000-$38000',
                 'location' => 'Nebraska, USA',
-                'experience' => '3 Years',
+                'experience' => 3,
                 'degree' => 'Bachelor',
                 'description' => 'We are seeking a Farm Production Coordinator to support production planning, team coordination, and daily agricultural activities.',
                 'responsibilities' => [
@@ -255,7 +255,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$46000-$52000',
                 'location' => 'Ohio, USA',
-                'experience' => '6 Years',
+                'experience' => 6,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for a Metal Production Supervisor to manage production teams and ensure manufacturing processes meet quality and safety standards.',
                 'responsibilities' => [
@@ -285,7 +285,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$52000-$58000',
                 'location' => 'Michigan, USA',
-                'experience' => '4 Years',
+                'experience' => 4,
                 'degree' => 'Master',
                 'description' => 'We are seeking a Manufacturing Process Engineer to improve production processes, reduce waste, and support efficient manufacturing operations.',
                 'responsibilities' => [
@@ -315,7 +315,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$36000-$40000',
                 'location' => 'Chicago, USA',
-                'experience' => '3 Years',
+                'experience' => 3,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for an Education Program Coordinator to organize learning programs and support students, teachers, and partner organizations.',
                 'responsibilities' => [
@@ -345,7 +345,7 @@ class JobData
                 'type' => 'Part time',
                 'salary' => '$26000-$30000',
                 'location' => 'Boston, USA',
-                'experience' => '2 Years',
+                'experience' => 2,
                 'degree' => 'Bachelor',
                 'description' => 'We are seeking a Student Services Advisor to support students with academic planning, career development, and educational resources.',
                 'responsibilities' => [
@@ -375,7 +375,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$48000-$54000',
                 'location' => 'New-York, USA',
-                'experience' => '4 Years',
+                'experience' => 4,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for a Financial Planning Analyst to support business planning, financial analysis, and strategic decision-making.',
                 'responsibilities' => [
@@ -405,7 +405,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$44000-$50000',
                 'location' => 'California, USA',
-                'experience' => '5 Years',
+                'experience' => 5,
                 'degree' => 'Bachelor',
                 'description' => 'We are seeking a Client Relationship Manager to build strong client relationships and provide financial service solutions.',
                 'responsibilities' => [
@@ -435,7 +435,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$43000-$48000',
                 'location' => 'Texas, USA',
-                'experience' => '6 Years',
+                'experience' => 6,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for a Logistics Operations Manager to oversee transportation operations and improve delivery efficiency.',
                 'responsibilities' => [
@@ -465,7 +465,7 @@ class JobData
                 'type' => 'Part time',
                 'salary' => '$30000-$34000',
                 'location' => 'Florida, USA',
-                'experience' => '2 Years',
+                'experience' => 2,
                 'degree' => 'Bachelor',
                 'description' => 'We are seeking a Fleet Support Coordinator to assist with vehicle scheduling, maintenance coordination, and transportation administration.',
                 'responsibilities' => [
@@ -495,7 +495,7 @@ class JobData
                 'type' => 'Full time',
                 'salary' => '$40000-$45000',
                 'location' => 'New-York, USA',
-                'experience' => '5 Years',
+                'experience' => 5,
                 'degree' => 'Bachelor',
                 'description' => 'We are looking for a Retail Operations Manager to oversee store operations, improve customer service, and support business growth.',
                 'responsibilities' => [
