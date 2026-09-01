@@ -1,58 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Job Portal Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Figmaのデザインをもとに制作したJob Portal（求人サイト）のLaravel版です。
 
-## About Laravel
+静的なHTML / CSS / JavaScriptで制作したサイトをLaravelへ移行し、求人情報をSQLiteデータベースから取得する動的なWebサイトとして実装しました。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 概要
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+求人一覧・求人詳細・検索・絞り込み・ソート・ページネーションなど、求人サイトに必要な基本機能をLaravelで実装しています。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Figmaのデザインをできるだけ維持しながら、LaravelのRouting、Controller、Model、Migration、Seeder、Eloquent、Bladeなどを使用して、静的サイトを動的なWebサイトへ変換しました。
 
-## Learning Laravel
+### 制作の流れ
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```text
+Figma
+  ↓
+HTML / CSS / JavaScript
+  ↓
+Laravel
+  ↓
+SQLite
+  ↓
+Eloquent
+  ↓
+検索・絞り込み・ソート・ページネーション
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## ✨ 実装した機能
 
-## Contributing
+### 求人検索・絞り込み
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* 求人タイトル・会社名によるキーワード検索
+* 勤務地による絞り込み
+* カテゴリーによる絞り込み
+* Job Typeによる絞り込み
+* 経験レベルによる絞り込み
+* タグによる絞り込み
+* 最低給与による絞り込み
 
-## Code of Conduct
+### 給与ソート
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Salary: High to Low
+* Salary: Low to High
 
-## Security Vulnerabilities
+給与はデータベース上で最低給与と最高給与に分けて管理しています。
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```text
+salary_min
+40000
 
-## License
+salary_max
+42000
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+これにより、データベース上で給与の絞り込みやソートを行えるようにしています。
+
+### 求人一覧
+
+* 求人カード表示
+* 求人詳細ページ
+* 関連求人表示
+* ページネーション
+* Nextボタン
+* 現在の表示件数 / 全件数の動的表示
+
+### その他
+
+* Browse by Categoryからカテゴリー検索へのリンク
+* Job Cardのお気に入りUI
+* レスポンシブ対応
+* FigmaデザインをもとにしたUI実装
+
+> お気に入り機能は現在フロントエンドのUIとして実装しています。お気に入り情報はデータベースには保存されません。
+
+## 🛠 使用技術
+
+* PHP 8.3
+* Laravel 13
+* SQLite
+* Blade
+* HTML
+* CSS
+* JavaScript
+* Git / GitHub
+* GitHub Codespaces
+
+## 🧩 Laravelで使用した機能
+
+* Routing
+* Controller
+* Blade
+* Eloquent ORM
+* Modelリレーション
+* Migration
+* Seeder
+* Query Builder
+* GETパラメータ
+* `where()`
+* `whereBetween()`
+* `whereHas()`
+* `orderBy()`
+* Pagination
+
+## 🗄️ データベース構成
+
+求人情報と、1つの求人に複数存在するデータを分けて管理しています。
+
+```text
+jobs
+├── id
+├── title
+├── company
+├── category
+├── type
+├── salary_min
+├── salary_max
+├── location
+├── experience
+├── degree
+└── description
+
+job_responsibilities
+├── id
+├── job_id
+└── responsibility
+
+job_skills
+├── id
+├── job_id
+└── skill
+
+job_tags
+├── id
+├── job_id
+└── tag
+```
+
+### Modelのリレーション
+
+```text
+Job
+ ├── hasMany → JobResponsibility
+ ├── hasMany → JobSkill
+ └── hasMany → JobTag
+```
+
+`JobResponsibility`、`JobSkill`、`JobTag`は、それぞれ`Job`に所属する1対多のリレーションになっています。
+
+## 🎓 学習目的
+
+このプロジェクトはLaravel学習の一環として制作しました。
+
+Figmaのデザインをもとに制作した静的サイトを、Laravelを使用した動的なWebサイトへ移行することで、Laravelの基本的な仕組みを実践的に学ぶことを目的としています。
+
+主に以下の内容を学習・実践しました。
+
+* データベース設計
+* Migrationの作成
+* Seederの作成
+* Eloquent Model
+* Modelリレーション
+* GETパラメータ
+* データベースを利用した検索・絞り込み
+* ソート機能
+* ページネーション
+* ControllerからBladeへのデータ受け渡し
+* Bladeによる動的な表示
+
+## 📌 制作状況
+
+Laravel版のJob Portalとして完成。
+
+Laravelの基本機能を実践しながら、Figmaベースの静的サイトを動的な求人サイトへ移行したポートフォリオ作品です。
