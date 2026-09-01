@@ -213,7 +213,8 @@
 
                      <div class="jobs__content">
                          <div class="jobs__toolbar">
-                             <p class="jobs__result">Showing {{ $jobs->firstItem() }}-{{ $jobs->lastItem() }} of {{ $jobs->total() }} results</p>
+                             <p class="jobs__result">Showing {{ $jobs->firstItem() }}-{{ $jobs->lastItem() }} of
+                                 {{ $jobs->total() }} results</p>
                              <div class="jobs__sort-wrapper">
                                  <select class="jobs__sort" name="sort">
                                      <option value="">Sort</option>
@@ -369,6 +370,7 @@
          const slider = document.querySelector('.job-filter__range');
          const salaryText = document.querySelector('.job-filter__salary-text');
          const sort = document.querySelector('.jobs__sort');
+         const favorites = document.querySelectorAll('.job-card__favorite');
 
          salaryText.textContent = `Minimum Salary: ${Number(slider.value).toLocaleString()}`;
 
@@ -380,6 +382,19 @@
              const url = new URL(window.location.href);
              url.searchParams.set('sort', sort.value);
              window.location.href = url.toString();
+         });
+
+         favorites.forEach(function(favorite) {
+             favorite.addEventListener('click', function() {
+                 console.log('favorite clicked');
+                 favorite.classList.toggle('is-active');
+                 const img = favorite.querySelector('img')
+                 if (favorite.classList.contains('is-active')) {
+                     img.src = 'images/heart.svg';
+                 } else {
+                     img.src = 'images/plus.svg';
+                 }
+             });
          });
      </script>
  @endsection

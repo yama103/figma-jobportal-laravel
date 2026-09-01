@@ -174,7 +174,7 @@
                     <ul class="category__list">
                         @foreach ($categories as $category => $count)
                             <li class="category__item">
-                                <a class="category__link" href="#">
+                                <a class="category__link" href="{{ route('jobs', ['category' => $category]) }}">
                                     <img class="category__icon" src="images/agriculture.svg" alt="" />
                                     <p class="category__title">{{ $category }}</p>
                                     <p class="badge">{{ $count }} jobs</p>
@@ -205,7 +205,7 @@
                                 </p>
                             </div>
                             <div class="about__actions">
-                                <a class="button" href="#">Search Job</a>
+                                <a class="button" href="{{ route('jobs') }}">Search Job</a>
                                 <a class="about__learn" href="#">Learn more</a>
                             </div>
                         </div>
@@ -255,7 +255,7 @@
                                 Blandit a massa elementum id scelerisque rhoncus
                             </p>
                         </div>
-                        <a class="button" href="#">Search Job</a>
+                        <a class="button" href="{{ route('jobs') }}">Search Job</a>
                     </div>
                     <img class="banner__img" src="images/banner-img.webp" alt="" />
                 </div>
