@@ -54,7 +54,7 @@
 
                                         <li class="job-card__meta-item">
                                             <img src="{{ asset('images/wallet.svg') }}" alt="" />
-                                            <span>{{ $job->salary }}</span>
+                                            <span>${{ $job->salary_min }}-${{ $job->salary_max }}</span>
                                         </li>
 
                                         <li class="job-card__meta-item">

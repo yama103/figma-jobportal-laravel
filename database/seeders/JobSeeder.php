@@ -19,12 +19,19 @@ class JobSeeder extends Seeder
         $jobs = JobData::all();
 
         foreach ($jobs as $job) {
+
+            $salary = str_replace('$', '', $job['salary']);
+            $salaryParts = explode('-', $salary);
+
             $createdJob = Job::create([
                 'title' => $job['title'],
                 'company' => $job['company'],
                 'category' => $job['category'],
                 'type' => $job['type'],
-                'salary' => $job['salary'],
+
+                'salary_min' => (int) $salaryParts[0],
+                'salary_max' => (int) $salaryParts[1],
+
                 'location' => $job['location'],
                 'experience' => $job['experience'],
                 'degree' => $job['degree'],

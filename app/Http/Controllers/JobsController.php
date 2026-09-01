@@ -62,21 +62,6 @@ class JobsController extends Controller
             $query->where('experience', '>=', 6);
         }
 
-        // $salary = $request->input('salary');
-
-        // if ($salary) {
-        //     $jobs = $jobs->filter(
-        //         function ($job) use ($salary) {
-        //             $salaryRange = explode('-', $job['salary']);
-        //             $salaryValue = str_replace('$', '', $salaryRange[0]);
-        //             $salaryValue = (int) $salaryValue;
-        //             return $salaryValue >= $salary;
-        //         }
-        //     );
-        // }
-
-
-
         $categoryCounts = Job::query()
             ->select('category')
             ->selectRaw('COUNT(*) as count')
@@ -96,7 +81,23 @@ class JobsController extends Controller
             'expert' => Job::where('experience', '>=', 6)->count(),
         ];
 
-        $jobs = $query->paginate(10);
+        $salary = $request->input('salary');
+
+        if ($salary) {
+            $query->where('salary_min', '>=', $salary);
+        }
+
+        $sort = $request->input('sort');
+
+        if ($sort === 'salary-high') {
+            $query->orderBy('salary_max', 'desc');
+        } elseif ($sort === 'salary-low') {
+            $query->orderBy('salary_min', 'asc');
+        }
+
+        $jobs = $query
+            ->paginate(10)
+            ->withQueryString();
 
         return view('jobs', [
             'title' => $title,

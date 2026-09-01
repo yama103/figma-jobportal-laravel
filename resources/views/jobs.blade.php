@@ -143,53 +143,11 @@
                                      @endforeach
                                  </ul>
                              </div>
-                             <!-- Date Posted -->
-                             <div class="job-filter__group">
-                                 <h3 class="job-filter__title">Date Posted</h3>
-                                 <ul class="job-filter__list">
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="date-posted" value="all" />
-                                             <span class="job-filter__text">All</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="date-posted" value="last-hour" />
-                                             <span class="job-filter__text">Last Hour</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="date-posted" value="last-24-hour" />
-                                             <span class="job-filter__text">Last 24 Hour</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="date-posted" value="last-7-days" />
-                                             <span class="job-filter__text">Last 7 Days</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                     <li class="job-filter__item">
-                                         <label class="job-filter__label">
-                                             <input type="checkbox" name="date-posted" value="last-30-days" />
-                                             <span class="job-filter__text">Last 30 Days</span>
-                                             <span class="job-filter__count">10</span>
-                                         </label>
-                                     </li>
-                                 </ul>
-                             </div>
-                             <!-- Salary -->
                              <div class="job-filter__group">
                                  <h3 class="job-filter__title">Salary</h3>
                                  <div class="job-filter__range-wrapper">
-                                     <input type="range" min="0" max="50000"
-                                         value="{{ request('salary', 0) }}" name="salary" class="job-filter__range" />
+                                     <input type="range" min="0" max="50000" value="{{ request('salary', 0) }}"
+                                         name="salary" class="job-filter__range" />
                                  </div>
                                  <div class="job-filter__salary-info">
                                      <span class="job-filter__salary-text">Salary: $0 - $50000</span>
@@ -255,11 +213,10 @@
 
                      <div class="jobs__content">
                          <div class="jobs__toolbar">
-                             <p class="jobs__result">Showing 1-10 of All results</p>
+                             <p class="jobs__result">Showing {{ $jobs->firstItem() }}-{{ $jobs->lastItem() }} of {{ $jobs->total() }} results</p>
                              <div class="jobs__sort-wrapper">
-                                 <select class="jobs__sort">
-                                     <option value="latest">Sort by latest</option>
-                                     <option value="oldest">Sort by oldest</option>
+                                 <select class="jobs__sort" name="sort">
+                                     <option value="">Sort</option>
                                      <option value="salary-high">Salary: High to Low</option>
                                      <option value="salary-low">Salary: Low to High</option>
                                  </select>
@@ -304,7 +261,7 @@
                                                  </li>
                                                  <li class="job-card__meta-item">
                                                      <img src="images/wallet.svg" alt="" />
-                                                     <span>{{ $job->salary }}</span>
+                                                     <span>${{ $job->salary_min }}-${{ $job->salary_max }}</span>
                                                  </li>
                                                  <li class="job-card__meta-item">
                                                      <img src="images/location.svg" alt="" />
@@ -332,12 +289,15 @@
                                          @endfor
                                      </li>
 
-                                     <li class="jobs__pagination-next-item">
-                                         <a href="#" class="jobs__pagination-link jobs__pagination-next">
-                                             Next
-                                             <img src="images/chevron-right.svg" alt="" aria-hidden="true" />
-                                         </a>
-                                     </li>
+                                     @if ($jobs->hasMorePages())
+                                         <li class="jobs__pagination-next-item">
+                                             <a href="{{ $jobs->nextPageUrl() }}"
+                                                 class="jobs__pagination-link jobs__pagination-next">
+                                                 Next
+                                                 <img src="images/chevron-right.svg" alt="" aria-hidden="true" />
+                                             </a>
+                                         </li>
+                                     @endif
                                  </ul>
                              </nav>
                      </div>
@@ -408,11 +368,18 @@
      <script>
          const slider = document.querySelector('.job-filter__range');
          const salaryText = document.querySelector('.job-filter__salary-text');
+         const sort = document.querySelector('.jobs__sort');
 
          salaryText.textContent = `Minimum Salary: ${Number(slider.value).toLocaleString()}`;
 
          slider.addEventListener('input', function() {
              salaryText.textContent = `Minimum Salary: ${Number(slider.value).toLocaleString()}`;
+         });
+
+         sort.addEventListener('change', function() {
+             const url = new URL(window.location.href);
+             url.searchParams.set('sort', sort.value);
+             window.location.href = url.toString();
          });
      </script>
  @endsection
